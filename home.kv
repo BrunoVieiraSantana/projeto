@@ -1,0 +1,164 @@
+#: import DashboardApp dashboard
+
+<HomeApp>:
+    #md_bg_color: 'blue'
+    md_bg_color: '#ffffff'
+    # spacing: dp(8)
+    # canvas.before:
+    #     Rectangle:
+    #         pos: self.pos
+    #         size: self.size
+
+    MDBoxLayout:
+        id: nav_menu
+        #md_bg_color: 'green'
+        size_hint_x: .25 #0 - 1
+        orientation: 'vertical'
+        MDBoxLayout:
+            id: logo_nbox
+            size_hint_y: .15
+            padding: dp(8)
+            MDAnchorLayout:
+                anchor_x: 'right'
+                size_hint_x: None
+                width: dp(32)
+                MDIconButton:
+                    icon: 'images\icon.png'
+                    size_hint_y: None
+                    height: dp(32)
+            MDLabel:
+                text: """Gestão Pessoal"""
+
+
+        MDGridLayout:
+            id: tabs_box
+            size_hint_y: .7
+            cols: 1
+            padding: dp(2)
+            NavTab:
+                text: 'Visão Geral'
+                state: 'down'
+                icon: 'images/ic_trend.png'
+                icon_active: 'images/ic_trend_active.png'
+            NavTab:
+                text: 'Adicionar'
+                icon: 'images/ic_people.png'
+                icon_active: 'images/ic_people_active.png'
+            NavTab:
+                text: 'buscar'
+                icon: 'images/ic_search.png'
+                icon_active: 'images/ic_search_active.png'
+
+        MDGridLayout:
+            id: sec_box
+            size_hint_y: .7
+            cols: 1
+            padding: dp(2)
+            NavTab:
+                text: 'Suporte'
+                icon: 'images/ic_chat.png'
+                icon_active: 'images/ic_chat_active.png'
+            NavTab:
+                text: 'Configurações'
+                icon: 'images/ic_settings.png'
+                icon_active: 'images/ic_settings_active.png'
+            NavTab:
+                text: 'Log out'
+                icon: 'images/ic_signout.png'
+                icon_active: 'images/ic_signout_active.png'
+                on_press: root.go_home()
+
+    MDBoxLayout:
+        pos_hint: {'right': 1}
+        #md_bg_color: 'red'
+        size_hint_x: .75 #0 - 1
+        spacing: dp(8)
+        orientation: 'vertical'
+        padding: [dp(16), dp(8), dp(12), dp(8)]
+        md_bg_color: '#f5f5f5'
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        MDBoxLayout:
+            id: actionbar
+            size_hint_y: None
+            height: dp(54)
+            #md_bg_color: 'pink'
+            MDBoxLayout:
+                size_hint_x: .7
+                orientation: 'vertical'
+                MDLabel:
+                    text: 'Boa tarde, Alucard!'
+                    size_hint_y: .6
+                MDLabel:
+                    text: 'Sexta-feira, 26 Maio 2023'
+                    size_hint_y: .4
+            MDBoxLayout:
+                size_hint_x: .3
+                spacing: dp(8)
+                Widget:
+
+                MDAnchorLayout:
+                    MDBoxLayout:
+                        radius: [self.height]
+                        size_hint: [None, None]
+                        size: [dp(42), dp(42)]
+                        elevation: 4
+                        Widget:
+                            canvas.before:
+                                Color:
+                                    rgba: [1,1,1,1]
+                                Ellipse:
+                                    pos: self.pos
+                                    size: self.size
+                                    source: 'images/avatar.jpg'
+                
+        MDBoxLayout:
+            ScreenManager:
+                id: scrn_mngr
+                Screen:
+                    name: 'scrn_overview'
+                    DashboardApp:
+                Screen:
+                    name: 'scrn_add'
+                Screen:
+                    name: 'scrn_search'
+
+
+<NavTab>:
+    background_normal: ''
+    background_down: ''
+    background_color: [0,0,0,0]
+    group: 'tabs'
+    size_hint_y: None
+    height: dp(42)
+    spacing: dp(4)
+    canvas.before:
+        Color:
+            rgba: [0,0,0,0] if self.state == 'normal' else rgba("#E1F1FF")
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: [0,0,0,0] if self.state == 'normal' else rgba("#2D9CDB")
+        Rectangle:
+            pos: [self.pos[0]+(self.size[0]-dp(1)), self.pos[1]]
+            size: [dp(8), self.size[1]]
+    MDAnchorLayout:
+        size_hint_x: None
+        width: self.height
+        padding: [dp(28),dp(14),dp(0),dp(14)]
+        Widget:
+            canvas.before:
+                Color:
+                    rgba: [1,1,1,1]
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+                    source: root.icon if root.state == 'normal' else root.icon_active
+    MDLabel:
+        halign: 'left'
+        valign: 'middle'
+        text: root.text
+        color: rgba('c4c4c4') if root.state == 'normal' else rgba("#2D9CDB")
