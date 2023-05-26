@@ -1,7 +1,7 @@
 
 <span align="center">
 
-##  Sistema de Gestão Financeira Pessoal 💲
+##  Sistema de Gestão Financeira Pessoal 💵
 
 </span>
 
