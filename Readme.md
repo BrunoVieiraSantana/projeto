@@ -1,12 +1,12 @@
 
 <span align="center">
 
-##  Sistema de Gestão Pessoal 🚦 
+##  Sistema de Gestão Financeira Pessoal 💲
 
 </span>
 
 <p align="center">
-  Aplicação de gerenciamento pessoal com integração à um banco de dados
+  Aplicação de gerenciamento financeiro pessoal com integração à um banco de dados
 relacional.
   
 </p>
