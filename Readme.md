@@ -29,3 +29,12 @@ pip install https://github.com/kivymd/KivyMD/archive/master.zip<br />
 python -m venv venv<br />
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned<br />
 .\venv\Scripts\Activate.ps1<br />
+
+
+
+</p>
+<strong>Teste de bibliotecas:</strong><br />
+pip install kivy-garden<br />
+garden install matplotlib<br />
+pip install matplotlib<br />
+
