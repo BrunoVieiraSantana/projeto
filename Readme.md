@@ -16,6 +16,8 @@ relacional.
 
 <strong>Bibliotecas necessárias</strong><br />
 pip install garden.matplotlib<br />
+python -m pip install "kivy[base] @ https://github.com/kivy/kivy/archive/master.zip"<br />
+pip install https://github.com/kivymd/KivyMD/archive/master.zip<br />
 
 
 </p>
