@@ -21,3 +21,8 @@ pip install https://github.com/kivymd/KivyMD/archive/master.zip<br />
 
 
 </p>
+
+<strong>Comandos utilizados para a criação de um ambiente virtual:</strong><br />
+python -m venv venv<br />
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned<br />
+.\venv\Scripts\Activate.ps1<br />
