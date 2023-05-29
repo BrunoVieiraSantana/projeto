@@ -37,4 +37,9 @@ Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned<br />
 pip install kivy-garden<br />
 garden install matplotlib<br />
 pip install matplotlib<br />
-
+</p>
+import matplotlib
+matplotlib.use('module://kivy.garden.matplotlib.backend_kivy')<br />
+from kivy.garden.matplotlib.backend_kivyagg import FigureCanvas, NavigationToolbar2Kivy, FigureCanvasKivyAgg<br />
+from matplotlib.figure import Figure<br />
+import matplotlib.pyplot as plt<br />
