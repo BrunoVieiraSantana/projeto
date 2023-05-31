@@ -1,0 +1,84 @@
+#: import DashboardApp dashboard
+
+
+<HomeApp>:
+    md_bg_color: app.theme_cls.primary_color
+    
+    MDFloatLayout:
+        md_bg_color: app.theme_cls.primary_dark
+        pos_hint: {'center_x': .5, 'center_y': .975}
+        size_hint: 1, None
+        size: "48dp", "48dp"
+        orientation: 'horizontal'
+        MDLabel:
+            text: 'Boa Tarde, Alucard!'
+            pos_hint: {'center_x': .63, 'center_y': .4}
+
+    MDFloatLayout:
+        md_bg_color: app.theme_cls.primary_dark
+        pos_hint: {'center_x': .5, 'center_y': .93}
+        size_hint: 1, None
+        size: "48dp", "30dp"
+        orientation: 'horizontal'
+        MDLabel:
+            text: 'Sexta-feira, 29 de Maio de 2023'
+            font_size: 12
+            pos_hint: {'center_x': .63, 'center_y': .5}
+
+
+
+    MDFloatLayout:
+        md_bg_color: app.theme_cls.primary_dark 
+        size_hint: None, 1
+        size: "48dp", "48dp"
+        orientation: 'vertical'
+        MDIconButton:
+            icon: 'home-assistant'
+            pos_hint: {'center_x': .5, 'center_y': .8}
+        MDIconButton:
+            icon: 'layers-search'
+            pos_hint: {'center_x': .5, 'center_y': .7}
+        MDIconButton:
+            icon: 'pen-plus'
+            pos_hint: {'center_x': .5, 'center_y': .6}
+        MDIconButton:
+            icon: 'face-agent'
+            pos_hint: {'center_x': .5, 'center_y': .4}
+        MDIconButton:
+            icon: 'cog'
+            pos_hint: {'center_x': .5, 'center_y': .3}
+        MDIconButton:
+            icon: 'logout-variant'
+            pos_hint: {'center_x': .5, 'center_y': .2}
+            on_press: root.go_login()
+
+
+    MDFloatLayout:
+        pos_hint: {'center_x':0.09, 'center_y':0.95}
+        size_hint: None, None
+        size: "48dp", "48dp"
+        canvas:
+            Color:
+                rgb: (223/255, 237/255, 240/255, 0)
+            Ellipse:
+                pos: self.pos
+                size: self.size
+                source: 'images/avatar.jpg'
+
+    MDFloatLayout:
+        pos_hint: {'center_x': .53, 'center_y': .46}
+        size_hint: .936, .91
+        size: "48dp", "48dp"
+        orientation: 'horizontal'
+
+        MDBoxLayout:
+            pos_hint: {'center_x': .5, 'center_y': .49}
+            ScreenManager:
+                Screen:
+                    name: 'screen_overview'
+                    DashboardApp:
+                Screen:
+                    name: 'screen_add'
+                Screen:
+                    name: 'screen_search'
+

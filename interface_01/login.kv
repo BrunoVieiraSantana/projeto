@@ -1,0 +1,43 @@
+<LoginApp>:
+    MDFloatLayout:
+        radius: [0, 0, 0, 0]
+        #md_bg_color: app.theme_cls.primary_color
+        Image:
+            source: 'images/logo.png'
+            pos_hint: {'center_x':0.5, 'center_y':0.65}
+
+        MDFillRoundFlatButton:
+            id: 'login_button'
+            text: '    login    '
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
+            # md_bg_color: '#f9c8c4'
+            # text_color: '#53372c'
+            on_press: root.go_home()
+
+
+        MDIconButton:
+            icon: 'account-plus'
+            pos_hint: {'center_x': .81, 'center_y': .07}
+            on_press: root.go_signup()
+
+        MDTextButton:
+            text: 'Novo Cadastro'
+            pos_hint: {'center_x': .9, 'center_y': .07}
+            on_press: root.go_signup()
+
+        MDTextField:
+            hint_text: 'Login'
+            halign: 'center'
+            size_hint: (.2, .085)
+            pos_hint: {'center_x': 0.5, 'center_y':0.39}
+            font_size: 10
+            mode: 'rectangle'
+
+        MDTextField:
+            hint_text: 'Senha'
+            halign: 'center'
+            size_hint: (.2, .085)
+            pos_hint: {'center_x': 0.5, 'center_y':0.30}
+            font_size: 10
+            mode: 'rectangle'
+            password: True

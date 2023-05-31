@@ -1,0 +1,48 @@
+<SignupApp>:
+    MDFloatLayout:
+        radius: [0, 0, 0, 0]
+        md_bg_color: app.theme_cls.primary_dark
+        MDLabel:
+            text:'Cadastro de Novo Usuário'
+            halign:"center"
+            pos_hint: {"center_x": 0.5, "center_y":0.87}
+
+        MDTextField:
+            hint_text:"Nome Completo"
+            halign:"center"
+            size_hint: (.85, .060)
+            mode: 'rectangle'
+            pos_hint: {"center_x": 0.5, "center_y":0.77}
+    
+        MDTextField:
+            hint_text:"E-mail"
+            halign:"center"
+            size_hint: (.85, .060)
+            mode: 'rectangle'
+            pos_hint: {"center_x": 0.5, "center_y":0.70}
+
+        MDTextField:
+            hint_text: "Senha"
+            halign:"center"
+            size_hint: (.85, .060)
+            mode: 'rectangle'
+            pos_hint: {"center_x": 0.5, "center_y":0.63}
+            password: True
+
+        MDTextField:
+            hint_text: "Repita a Senha"
+            halign:"center"
+            size_hint: (.85, .060)
+            mode: 'rectangle'
+            pos_hint: {"center_x": 0.5, "center_y":0.56}
+            password: True
+
+        MDFillRoundFlatButton:
+            text:'    Salvar    '
+            pos_hint:{"center_x": .5, "center_y": .49}
+
+        MDTextButton:
+            text:'Voltar para Tela de Login'
+            pos_hint:{"center_x": .5, "center_y": .06}
+            on_press: root.go_login()
+
