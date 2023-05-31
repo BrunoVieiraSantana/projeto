@@ -140,6 +140,8 @@ def atualizarGanhos(conexao,coluna,variavel,id):
     
 
 # Pedir que o usuario diga o valor que foi subtraido do total da reserva ---------------------------------------------------
+
+
 def atualizarReserva(conexao,variavell):
 
     total = totalReserva()
