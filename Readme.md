@@ -32,7 +32,7 @@ python -m venv venv<br />
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned<br />
 .\venv\Scripts\Activate.ps1<br />
 
-
+___
 
 </p>
 <strong>Teste de bibliotecas:</strong><br />
