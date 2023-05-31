@@ -20,6 +20,7 @@ relacional.
 
 + Bibliotecas necessarias para criação de gráficos<br />
   - pip install kivy-garden<br />
+  - garden install matplotlib
   - garden install graph<br />
   - pip install matplotlib<br />
   - python -m pip install https://github.com/kivy-garden/graph/archive/master.zip<br />
@@ -37,11 +38,8 @@ ___
 
 </p>
 <strong>Teste de bibliotecas:</strong><br />
-pip install kivy-garden<br />
-garden install matplotlib<br />
-pip install matplotlib<br />
-</p>
-import matplotlib
+
+import matplotlib<br />
 matplotlib.use('module://kivy.garden.matplotlib.backend_kivy')<br />
 from kivy.garden.matplotlib.backend_kivyagg import FigureCanvas, NavigationToolbar2Kivy, FigureCanvasKivyAgg<br />
 from matplotlib.figure import Figure<br />
