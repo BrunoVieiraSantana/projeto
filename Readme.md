@@ -22,6 +22,7 @@ relacional.
   - pip install kivy-garden<br />
   - garden install graph<br />
   - pip install matplotlib<br />
+  - python -m pip install https://github.com/kivy-garden/graph/archive/master.zip<br />
 
 ___
 
