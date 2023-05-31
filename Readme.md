@@ -15,13 +15,13 @@ relacional.
 ## 💻 Instalação
 <strong>Bibliotecas necessárias</strong><br />
 + Bibliotecas necessarias para a interface gráfica<br />
-- python -m pip install "kivy[base] @ https://github.com/kivy/kivy/archive/master.zip"<br />
-- pip install https://github.com/kivymd/KivyMD/archive/master.zip<br />
+  - python -m pip install "kivy[base] @ https://github.com/kivy/kivy/archive/master.zip"<br />
+  - pip install https://github.com/kivymd/KivyMD/archive/master.zip<br />
 
 + Bibliotecas necessarias para criação de gráficos<br />
-- pip install kivy-garden<br />
-- garden install graph<br />
-- pip install matplotlib<br />
+  - pip install kivy-garden<br />
+  - garden install graph<br />
+  - pip install matplotlib<br />
 
 
 
