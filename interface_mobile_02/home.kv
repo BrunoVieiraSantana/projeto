@@ -1,0 +1,131 @@
+#:import MDCard kivymd.uix.card.MDCard
+#:import NoTransition kivy.uix.screenmanager.NoTransition
+
+<PlotWidgetPie>
+<PlotWidgetBar>
+<HomeApp>:
+    md_bg_color: app.theme_cls.primary_color
+    MDBoxLayout:
+        orientation:'vertical'  
+        MDTopAppBar:
+            elevation:0
+            pos_hint: {'center_x': 0.5}
+            left_action_items: [["menu"]]
+            right_action_items: [["dots-vertical"], ["clock"]]
+
+        MDGridLayout:
+            md_bg_color: app.theme_cls.primary_color
+            size_hint_y:.75
+            cols:2
+            # padding:[dp(15),dp(15),dp(15),dp(35)]
+            # spacing:dp(15)  
+
+            MDBoxLayout:
+                orientation:'vertical' 
+                ScreenManager:
+                    id: screen_nav
+                    transition: NoTransition()
+                    MDScreen:
+                        name: 'overview'
+
+                        ScrollView:
+                            do_scroll_x: False
+                            do_scroll_y: True
+                            
+                            MDBoxLayout:
+                                orientation: 'vertical'
+                                id: layout
+                                padding: 15
+                                spacing: 15
+                                size_hint: 1, None
+                                height: self.minimum_height
+
+                                MDLabel:
+                                    text: "Porcentagem da Receita gasta"
+                                    size_hint_y: None
+                                    height: self.texture_size[1]
+                                    halign: "center"
+                                    canvas.before:
+                                        Rectangle:
+                                            size: self.size
+                                            pos: self.pos
+
+                                MDProgressBar:
+                                    color: '#5679ad'
+                                    value:75
+                                    size_hint_y: None
+                                    height:35
+                                    halign: "center"
+
+                                PlotWidgetBar:
+                                    size_hint_y: None
+                                    height: 900
+                                    halign: "center"
+                                    canvas.before:
+                                        Rectangle:
+                                            size: self.size
+                                            pos: self.pos
+
+                                PlotWidgetPie:
+                                    size_hint_y: None
+                                    height: 900
+                                    halign: "center"
+                                    canvas.before:
+                                        Rectangle:
+                                            size: self.size
+                                            pos: self.pos
+
+                    MDScreen:
+                        name: 'add'
+                        MDLabel:
+                            text: 'Adicionar'
+                            pos_hint: {'center_y':.5}
+                            halign: 'center'
+
+                    MDScreen:
+                        name: 'search'
+                        ScrollView:
+                            do_scroll_x: False
+                            do_scroll_y: True
+
+                            Label:
+                                size_hint_y: None
+                                height: self.texture_size[1]
+                                text_size: self.width, None
+                                padding: 10, 10
+                                text:
+                                    'Procurando...\n' * 100
+
+                    MDScreen:
+                        name: 'calendar'
+                        MDLabel:
+                            text: 'Calendário'
+                            pos_hint: {'center_y':.5}
+                            halign: 'center'
+
+
+                MDBoxLayout:
+                    orientation:'horizontal'
+                    size_hint: .76, .1
+                    pos_hint: {'center_x':.5, 'center_y':.5}
+                    elevation: 0
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [16]
+                    MDIconButton:
+                        icon:'home'
+                        pos_hint: {'center_y':.5}
+                        on_release: screen_nav.current = 'overview'
+        
+                    MDIconButton:
+                        icon:'plus'
+                        pos_hint: {'center_y':.5}
+                        on_release: screen_nav.current = 'add'
+    
+                    MDIconButton:
+                        icon:'magnify'
+                        pos_hint: {'center_y':.5}
+                        on_release: screen_nav.current = 'search'
+                    MDIconButton:
+                        icon:'calendar'
+                        pos_hint: {'center_y':.5}
+                        on_release: screen_nav.current = 'calendar'
