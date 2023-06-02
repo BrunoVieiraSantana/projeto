@@ -6,7 +6,7 @@
 </span>
 
 <p align="center">
-  Aplicação de gerenciamento financeiro pessoal com integração à um banco de dados
+  Aplicação de gerenciamento financeiro pessoal com integração à um banco de dados não
 relacional.
   
 
