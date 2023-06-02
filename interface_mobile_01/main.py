@@ -5,6 +5,7 @@ from home import HomeApp
 from signup import SignupApp
 
 class MainApp(MDApp):
+
     def build(self):
         sm = ScreenManager()
         sm.add_widget(LoginApp(name='login'))
@@ -15,7 +16,7 @@ class MainApp(MDApp):
         self.theme_cls.primary_palette = "BlueGray"
         self.theme_cls.primary_hue = '900'
         return sm
-
+        
             
 if __name__ == '__main__':
     MainApp().run()

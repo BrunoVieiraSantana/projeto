@@ -1,41 +1,43 @@
 <LoginApp>:
-    MDFloatLayout:
-        radius: [0, 0, 0, 0]
+    MDBoxLayout:
+        orientation: 'vertical'
         md_bg_color: app.theme_cls.primary_dark
+        spacing: 10
         Image:
             source: 'images/logo.png'
-            pos_hint: {'center_x':0.5, 'center_y':0.68}
+            pos_hint: {'center_x': 0.5}
+            size_hint: (.7, .7)
 
-        MDFillRoundFlatButton:
-            id: 'login_button'
-            text: '    login    '
-            pos_hint: {'center_x': 0.5, 'center_y': 0.2}
-            on_press: root.go_home()
-
-
-        MDIconButton:
-            icon: 'account-plus'
-            pos_hint: {'center_x': .81, 'center_y': .07}
-            on_press: root.go_signup()
-
-        MDTextButton:
-            text: 'Novo Cadastro'
-            pos_hint: {'center_x': .9, 'center_y': .07}
-            on_press: root.go_signup()
 
         MDTextField:
             hint_text: 'Login'
-            halign: 'center'
-            size_hint: (.2, .085)
-            pos_hint: {'center_x': 0.5, 'center_y':0.39}
-            font_size: 10
+            pos_hint: {'center_x': 0.5}
+            size_hint: (.4, .12)
             mode: 'rectangle'
 
         MDTextField:
             hint_text: 'Senha'
-            halign: 'center'
-            size_hint: (.2, .085)
-            pos_hint: {'center_x': 0.5, 'center_y':0.30}
-            font_size: 10
+            pos_hint: {'center_x': 0.5}
+            size_hint: (.4, .12)
             mode: 'rectangle'
             password: True
+
+        MDFillRoundFlatButton:
+            id: 'login_button'
+            text: 'login'
+            pos_hint: {'center_x': 0.5}
+            padding: [50, 0, 50, 0]
+            on_press: root.go_home()
+            
+        MDLabel:
+            text: ''
+            pos_hint: {'center_x': 0.5}
+            size_hint: (.4, .3)
+
+
+        MDIconButton:
+            icon: 'account-plus'
+            pos_hint: {'right': 1}
+            on_press: root.go_signup()
+
+
