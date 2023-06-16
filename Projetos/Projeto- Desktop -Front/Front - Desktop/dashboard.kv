@@ -1,0 +1,219 @@
+#: import Home home
+<Dashboard>:
+    MDBoxLayout:
+        padding: dp(14)
+        spacing: dp(14)
+        MDBoxLayout:
+            spacing: dp(16)
+            orientation: 'vertical'
+            size_hint_x: .75
+            MDBoxLayout:
+                spacing: dp(16)
+                size_hint_y: .15
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    pos_hint:{'center_y':0.5}
+                    size_hint_y:None
+
+                    MDFloatLayout:
+                        size_hint: 1, None
+                        size: "10dp", "50dp"
+                        pos_hint: {'center_y': .5}
+                        radius: [dp(14)]
+                        MDIcon:
+                            icon:'cash'
+                            font_size: 35
+                            pos_hint:{'center_x':.1,'center_y':1}
+                        
+                        MDLabel:
+                            size_hint_x:1
+                            halign:'left'
+                            pos_hint:{'center_x':.8,'center_y':1}
+                            text:'Receita Total'
+                            font_size: 18
+                            bold: True
+                        MDLabel:
+                            size_hint_x:1
+                            halign:'right'
+                            pos_hint: {'right': .9, 'center_y': .30}
+                            text:'R$ 500000.00'
+                            font_size: 22
+                            bold: True
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    pos_hint:{'center_y':0.5}
+                    size_hint_y:None
+                    MDFloatLayout:
+                        size_hint: 1, None
+                        size: "10dp", "50dp"
+                        pos_hint: {'center_y': .5}
+                        radius: [dp(14)]
+                        MDIcon:
+                            icon:'cash-plus'
+                            font_size: 35
+                            pos_hint:{'center_x':.1,'center_y':1}
+                        
+                        MDLabel:
+                            size_hint_x:1
+                            halign:'left'
+                            pos_hint:{'center_x':.8,'center_y':1}
+                            text:'Lucro Medio'
+                            font_size: 18
+                            bold: True
+                        MDLabel:
+                            size_hint_x:1
+                            halign:'right'
+                            pos_hint: {'right': .9, 'center_y': .30}
+                            text:'R$ 500.00'
+                            font_size: 22
+                            bold: True
+
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    pos_hint:{'center_y':0.5}
+                    size_hint_y:None
+                    MDFloatLayout:
+                        size_hint: 1, None
+                        size: "10dp", "50dp"
+                        pos_hint: {'center_y': .5}
+                        radius: [dp(14)]
+                        MDIcon:
+                            icon:'cash-minus'
+                            font_size: 35
+                            pos_hint:{'center_x':.1,'center_y':1}
+                        
+                        MDLabel:
+                            size_hint_x:1
+                            halign:'left'
+                            pos_hint:{'center_x':.8,'center_y':1}
+                            text:'Gasto Medio'
+                            font_size: 18
+                            bold: True
+                        MDLabel:
+                            size_hint_x:1
+                            halign:'right'
+                            pos_hint: {'right': .9, 'center_y': .30}
+                            text:'R$ 500.00'
+                            font_size: 22
+                            bold: True
+
+
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    pos_hint:{'center_y':0.5}
+                    size_hint_y:None
+                    MDFloatLayout:
+                        size_hint: 1, None
+                        size: "10dp", "50dp"
+                        pos_hint: {'center_y': .5}
+                        radius: [dp(14)]
+                        MDIcon:
+                            icon:'cash-remove'
+                            font_size: 35
+                            pos_hint:{'center_x':.1,'center_y':1}
+                        
+                        MDLabel:
+                            size_hint_x:1
+                            halign:'left'
+                            pos_hint:{'center_x':.8,'center_y':1}
+                            text:'Gasto Total'
+                            font_size: 18
+                            bold: True
+                        MDLabel:
+                            size_hint_x:1
+                            halign:'right'
+                            pos_hint: {'right': .9, 'center_y': .30}
+                            text:'R$ 50000.00'
+                            font_size: 22
+                            bold: True
+
+
+            MDBoxLayout:
+                spacing: dp(16)
+                size_hint_y: .2
+                orientation: 'horizontal'
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    size_hint_x: .656
+                    radius: [dp(14)]
+                    PlotWidgetPie:
+                        halign: "center"
+                        # pos_hint: {'y': .1}
+                        # canvas.before:
+                        #     Rectangle:
+                        #         size: self.size
+                        #         pos: self.pos
+
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    orientation: 'vertical'
+                    PlotWidgetBar:
+                        size_hint_y: None
+                        height: 205
+                        halign: "center"
+                        pos_hint: {'y': .04}
+                        # canvas.before:
+                        #     Rectangle:
+                        #         size: self.size
+                        #         pos: self.pos
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    PlotWidgetBar:
+                        size_hint_y: None
+                        height: 205
+                        halign: "center"
+                        pos_hint: {'y': .04}
+                        # canvas.before:
+                        #     Rectangle:
+                        #         size: self.size
+                        #         pos: self.pos
+
+
+            MDBoxLayout:
+                spacing: dp(16)
+                size_hint_y: .3
+                orientation: 'horizontal'
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    size_hint_x: .656
+                    radius: [dp(14)]
+                    PlotWidgetPie:
+                        halign: "center"
+                        # pos_hint: {'y': .1}
+                        # canvas.before:
+                        #     Rectangle:
+                        #         size: self.size
+                        #         pos: self.pos
+
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    PlotWidgetBar:
+                        size_hint_y: None
+                        height: 205
+                        halign: "center"
+                        pos_hint: {'y': .04}
+                        # canvas.before:
+                        #     Rectangle:
+                        #         size: self.size
+                        #         pos: self.pos
+
+                MDBoxLayout:
+                    id: data
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    PlotWidgetBar:
+                        size_hint_y: None
+                        height: 205
+                        halign: "center"
+                        pos_hint: {'y': .04}
+                        # canvas.before:
+                        #     Rectangle:
+                        #         size: self.size
+                        #         pos: self.pos

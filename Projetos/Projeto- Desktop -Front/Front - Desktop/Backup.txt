@@ -1,0 +1,103 @@
+<Lossboard>:
+    MDBoxLayout:
+        padding: dp(14)
+        spacing: dp(14)
+        MDBoxLayout:
+            spacing: dp(16)
+            orientation: 'vertical'
+            size_hint_x: .75
+            ScrollView:
+                size_hint: None,None
+                size:"100dp","100dp"
+                pos_hint:{'center_y':1}
+                md_bg_color:'red'
+                do_scroll_x: True
+                do_scroll_y: False
+
+                MDBoxLayout:
+                    size_hint:None,None
+                    orientation:'horizontal'
+                    md_bg_color:'red'
+                    width:1000
+                    MDLabel:
+                        text:'teste'*100
+                        pos_hint:{"center_x":0.5}
+                
+
+            MDBoxLayout:
+                spacing: dp(16)
+                size_hint_y: .2
+                orientation: 'horizontal'
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    size_hint_x: .656
+                    radius: [dp(14)]
+
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    orientation: 'vertical'
+                    MDLabel:
+                        text: "Porcentagem da Receita gasta"
+                        size_hint_y: None
+                        height: self.texture_size[1]
+                        halign: "center"
+                        # canvas.before:
+                        #     Rectangle:
+                        #         size: self.size
+                        #         pos: self.pos
+                    MDProgressBar:
+                        color: '#5679ad'
+                        value:75
+                        size_hint_y: None
+                        size_hint_x: 0.92
+                        height:35
+                        halign: "center"
+                        pos_hint: {'center_x': .5}
+                    MDBoxLayout:
+                        size_hint_y: None
+                        height: 50
+
+                    
+
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+
+
+            MDBoxLayout:
+                spacing: dp(16)
+                size_hint_y: .3
+                orientation: 'horizontal'
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    size_hint_x: .656
+                    radius: [dp(14)]
+
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    PlotWidgetBar:
+                        size_hint_y: None
+                        height: 205
+                        halign: "center"
+                        pos_hint: {'y': .04}
+                        # canvas.before:
+                        #     Rectangle:
+                        #         size: self.size
+                        #         pos: self.pos
+
+                MDBoxLayout:
+                    id: data
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    PlotWidgetPie:
+                        size_hint_y: None
+                        height: 209
+                        halign: "center"
+                        pos_hint: {'y': .04}
+                        # pos_hint: {'y': .1}
+                        # canvas.before:
+                        #     Rectangle:
+                        #         size: self.size
+                        #         pos: self.pos

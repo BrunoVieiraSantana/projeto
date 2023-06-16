@@ -1,0 +1,201 @@
+<Lossboard>:
+    MDBoxLayout:
+        padding: dp(14)
+        spacing: dp(14)
+        MDBoxLayout:
+            spacing: dp(16)
+            orientation: 'vertical'
+            size_hint_x: .75
+            MDBoxLayout:
+                md_bg_color:app.theme_cls.primary_dark
+                radius: [dp(14)]
+                size_hint: None,None
+                size: "310dp","30dp"
+                pos_hint:{'center_y':1,'center_x':0.5}
+                ScrollView:
+                    bar_width: 0
+                    bar_color: app.theme_cls.primary_dark
+                    bar_inactive_colo: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    size_hint: None,None
+                    size: "300dp","30dp"
+                    pos_hint:{'center_y':0.5,'center_x':0.5}
+                    width:self.width
+                    do_scroll_x: True
+                    do_scroll_y: False
+
+                    MDBoxLayout:
+                        pos_hint:{'center_x':1}
+                        radius: [dp(14)]
+                        size_hint:None,None
+                        width:1200
+                        height:30
+
+                        MDLabel:
+                            radius:[dp(14)]
+                            size_hint_x:None
+                            halign:'center'
+                            text:'Janeiro'
+                            pos_hint:{"center_x":0.5,"center_y":0.5}
+                        MDLabel:
+                            radius:[dp(14)]
+                            size_hint_x:None
+                            halign:'center'
+                            text:'Fevereiro'
+                            pos_hint:{"center_x":0.5,"center_y":0.5}
+                        MDLabel:
+                            radius:[dp(14)]
+                            size_hint_x:None
+                            halign:'center'
+                            text:'Março'
+                            pos_hint:{"center_x":0.5,"center_y":0.5}
+                        MDLabel:
+                            radius:[dp(14)]
+                            size_hint_x:None
+                            halign:'center'
+                            text:'Abril'
+                            pos_hint:{"center_x":0.5,"center_y":0.5}
+                        MDLabel:
+                            radius:[dp(14)]
+                            size_hint_x:None
+                            halign:'center'
+                            text:'Maio'
+                            pos_hint:{"center_x":0.5,"center_y":0.5}
+                        MDLabel:
+                            radius:[dp(14)]
+                            size_hint_x:None
+                            halign:'center'
+                            text:'Junho'
+                            pos_hint:{"center_x":0.5,"center_y":0.5}
+                        MDLabel:
+                            radius:[dp(14)]
+                            size_hint_x:None
+                            halign:'center'
+                            text:'Julho'
+                            pos_hint:{"center_x":0.5,"center_y":0.5}
+                        MDLabel:
+                            radius:[dp(14)]
+                            size_hint_x:None
+                            halign:'center'
+                            text:'Agosto'
+                            pos_hint:{"center_x":0.5,"center_y":0.5}
+                        MDLabel:
+                            radius:[dp(14)]
+                            size_hint_x:None
+                            halign:'center'
+                            text:'Setembro'
+                            pos_hint:{"center_x":0.5,"center_y":0.5}
+                        MDLabel:
+                            radius:[dp(14)]
+                            size_hint_x:None
+                            halign:'center'
+                            text:'Outubro'
+                            pos_hint:{"center_x":0.5,"center_y":0.5}
+                        MDLabel:
+                            radius:[dp(14)]
+                            size_hint_x:None
+                            halign:'center'
+                            text:'Novembro'
+                            pos_hint:{"center_x":0.5,"center_y":0.5}
+                        MDLabel:
+                            radius:[dp(14)]
+                            size_hint_x:None
+                            halign:'center'
+                            text:'Dezembro'
+                            pos_hint:{"center_x":0.5,"center_y":0.5}
+
+
+            MDBoxLayout:
+                spacing: dp(16)
+                size_hint_y: .2
+                orientation: 'horizontal'
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    size_hint_x: .456
+                    radius: [dp(14)]
+
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    orientation:'vertical'
+                    pos_hint:{'top':1}
+                    MDBoxLayout:
+                        radius: [dp(14)]
+                        pos_hint:{'top':1}
+                        md_bg_color:'red'
+                        size_hint_y: None
+                        size_hint_x:1
+                        height: 25
+                        MDLabel:
+                            text: "Porcentagem da Receita gasta"
+                            size_hint_y: None
+                            height: self.texture_size[1]
+                            halign:'center'
+                            pos_hint:{'center_y':0.5}
+                            # canvas.before:
+                            #     Rectangle:
+                            #         size: self.size
+                            #         pos: self.pos
+                    MDBoxLayout:
+                        radius: [dp(14)]
+                        pos_hint:{'top':1,'center_x': .5}
+                        size_hint_y: None
+                        size_hint_x: None
+                        width: 350
+                        height: 25
+                        MDProgressBar:
+                            radius:[dp(14)]
+                            color: '#5679ad'
+                            value:50
+                            size_hint_y: None
+                            size_hint_x: None
+                            height:25
+                            width:350
+                            halign: "center"
+                            pos_hint: {'center_x': .5}
+                        MDLabel:
+                            text:'50%'
+                            size_hint_x:None
+                            width: 30
+
+                    MDBoxLayout:
+                        md_bg_color:'blue'
+                        radius:[dp(14)]
+                        size_hint_y:1
+                    
+
+                    
+
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    size_hint_x: .456
+                    radius: [dp(14)]
+
+
+            MDBoxLayout:
+                spacing: dp(16)
+                size_hint_y: .3
+                orientation: 'horizontal'
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    size_hint_x: .456
+                    radius: [dp(14)]
+
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    PlotWidgetBar:
+                        size_hint_y: None
+                        height: 205
+                        halign: "center"
+                        pos_hint: {'y': .04}
+                        # canvas.before:
+                        #     Rectangle:
+                        #         size: self.size
+                        #         pos: self.pos
+
+                MDBoxLayout:
+                    id: data
+                    md_bg_color: app.theme_cls.primary_dark
+                    size_hint_x: .456
+                    radius: [dp(14)]
