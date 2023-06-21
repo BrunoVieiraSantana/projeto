@@ -9,7 +9,9 @@
   Aplicação de gerenciamento financeiro pessoal com integração à um banco de dados
 relacional.
   
-
+<div align="center">
+<img src="docs/10.png" width="700px" />
+</div>
 
 
 ## 💻 Instalação
