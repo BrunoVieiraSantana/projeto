@@ -1,0 +1,51 @@
+<Login>:
+    MDFloatLayout:
+        md_bg_color: app.theme_cls.primary_dark
+
+        Image:
+            source: 'images/logo.png'
+            pos_hint: {'center_x': .5, 'center_y': .78}
+
+        MDTextField:
+            id: data
+            mode: 'round'
+            hint_text: 'Login'
+            fill_color_normal: app.theme_cls.primary_dark
+            size_hint_x: .4
+            pos_hint: {'center_x': .5, 'center_y': .64}
+            write_tab: False
+            multiline: False
+        MDIconButton:
+            icon: "account"
+            pos_hint: {"center_x": .65, "center_y":.64}
+
+        MDTextField:
+            id: log_password_text_field
+            mode: 'round'
+            hint_text: 'Senha'
+            fill_color_normal: app.theme_cls.primary_dark
+            size_hint_x: .4
+            pos_hint: {'center_x': .5, 'center_y': .58}
+            write_tab: False
+            multiline: False
+            password: True
+
+        MDIconButton:
+            id: password_visibility_button
+            icon: "eye-off"
+            pos_hint: {"center_x": .65, "center_y":.58}
+            pos: log_password_text_field.width - self.width + dp(8), 0
+            on_release:
+                self.icon = "eye" if self.icon == "eye-off" else "eye-off"
+                log_password_text_field.password = not log_password_text_field.password
+
+        MDFillRoundFlatButton:
+            text: 'login'
+            pos_hint: {'center_x': .5, 'center_y': .52}
+            padding: [50, 0, 50, 0]
+            on_press: root.login()
+
+        MDIconButton:
+            icon: 'account-plus'
+            pos_hint: {'right': 1}
+            on_press: root.go_signup()

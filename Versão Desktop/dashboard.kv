@@ -1,0 +1,543 @@
+<Dashboard>:
+    MDBoxLayout:
+        md_bg_color: "green"
+        orientation: 'horizontal'
+        spacing: dp(16)
+        MDBoxLayout:
+            id:box_left
+            padding: [0, 0, 0, dp(16)]
+            md_bg_color: "red"
+            spacing: dp(16)
+            orientation: 'vertical'
+            size_hint_x: .60
+            MDBoxLayout:
+                spacing: dp(16)
+                size_hint_y: .05
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    MDFloatLayout:
+                        size_hint: 1, None
+                        size: "10dp", "50dp"
+                        pos_hint: {'center_y': .5}
+                        radius: [dp(14)]
+                        MDIcon:
+                            icon:'trending-up'
+                            font_size: 100
+                            pos_hint:{'center_x':.20,'center_y':.6}
+                        
+                        MDLabel:
+                            size_hint_x:1
+                            halign:'left'
+                            pos_hint:{'center_x':.87,'center_y':1}
+                            text:'Total Renda Mensal'
+                            font_size: 18
+                            bold: True
+                        MDLabel:
+                            id:textLucrot
+                            size_hint_x:1
+                            halign:'right'
+                            pos_hint: {'right': .922, 'center_y': .30}
+                            text: '1200'
+                            # text:lucroBar.texto
+                            font_size: 22
+                            bold: True
+
+
+
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    MDFloatLayout:
+                        size_hint: 1, None
+                        size: "10dp", "50dp"
+                        pos_hint: {'center_y': .5}
+                        radius: [dp(14)]
+                        MDIcon:
+                            icon:'trending-down'
+                            font_size: 100
+                            pos_hint:{'center_x':.23,'center_y':.6}
+                        
+                        MDLabel:
+                            size_hint_x:1
+                            halign:'left'
+                            pos_hint:{'center_x':.90,'center_y':1}
+                            text:'Total de Despesas'
+                            font_size: 18
+                            bold: True
+                        MDLabel:
+                            id:textoGasto
+                            size_hint_x:1
+                            halign:'right'
+                            pos_hint: {'right': .922, 'center_y': .30}
+                            text: '450'
+                            # text:gastoBar.texto
+                            font_size: 22
+                            bold: True
+
+                MDBoxLayout:
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    MDFloatLayout:
+                        size_hint: 1, None
+                        size: "10dp", "50dp"
+                        pos_hint: {'center_y': .5}
+                        radius: [dp(14)]
+                        MDIcon:
+                            icon:'finance'
+                            font_size: 100
+                            pos_hint:{'center_x':.23,'center_y':.6}
+                        
+                        MDLabel:
+                            size_hint_x:1
+                            halign:'left'
+                            pos_hint:{'center_x':.92,'center_y':1}
+                            text:'Total de Saldo'
+                            font_size: 18
+                            bold: True
+                        MDLabel:
+                            id:textLucro
+                            size_hint_x:1
+                            halign:'right'
+                            pos_hint: {'right': .83, 'center_y': .30}
+                            text: '800'
+                            # text:lucroBar.texto
+                            font_size: 22
+                            bold: True
+
+
+
+            MDBoxLayout:
+                spacing: dp(16)
+                size_hint_y: .2
+                orientation: 'horizontal'
+                MDBoxLayout:
+                    md_bg_color: 'pink'
+                    size_hint_x: .60
+                    orientation: 'vertical'
+                    MDBoxLayout:
+                        size_hint_y: .2
+                        md_bg_color: app.theme_cls.primary_dark
+                        radius: [dp(14)]
+                        orientation:'vertical'
+                        MDBoxLayout:
+                            radius: [dp(14)]
+                            pos_hint:{'top':1}
+                            size_hint_y: None
+                            size_hint_x:1
+                            height: 45
+                            MDLabel:
+                                text: "Porcentagem da Receita gasta"
+                                size_hint_y: None
+                                height: self.texture_size[1]
+                                halign:'center'
+                                pos_hint:{'center_y':0.5}
+
+                        MDBoxLayout:
+                            radius: [dp(14)]
+                            pos_hint:{'top':1,'center_x': .5}
+                            size_hint_y: None
+                            size_hint_x: None
+                            width: 350
+                            height: 25
+                            MDProgressBar:
+                                id:progressbar
+                                radius:[dp(14)]
+                                color: '#5679ad'
+                                # value:receita.porcent
+                                size_hint_y: None
+                                size_hint_x: None
+                                height:25
+                                width:350
+                                halign: "center"
+                                pos_hint: {'center_x': .5}
+                            MDLabel:
+                                id: porcentText
+                                # text:receita.ptext
+                                size_hint_x:None
+                                width: 30   
+                        Widget: # Ganbiarra para da espaçamento, kkkk
+                            size_hint_x: None
+                            height: dp(6)  
+
+                    Widget: # Ganbiarra para da espaçamento, kkkk
+                        size_hint_y: None
+                        height: dp(16)  
+                    MDBoxLayout:
+                        size_hint_y: .8
+                        md_bg_color: app.theme_cls.primary_dark
+                        radius: [dp(14)]
+
+                MDBoxLayout:
+                    id:data
+                    size_hint_x: .40
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    orientation:'vertical'
+                    PieGasto:
+                        size_hint_y: None
+                        size_hint_x: None
+                        padding: 0,0,0,0
+                        height: dp(770)
+                        width: dp(520)
+                        id:pieGasto
+                        pos_hint:{'center_x':.477,'center_y':.6}
+
+
+        MDBoxLayout:
+            id:dash_right
+            padding: [0, 0, dp(16), dp(16)]
+            md_bg_color: "blue"
+            spacing: dp(16)
+            orientation: 'vertical'
+            size_hint_x: .40
+            MDBoxLayout:
+                spacing: dp(16)
+                size_hint_y: .2
+                orientation: 'vertical'
+                MDBoxLayout:
+                    id:add
+                    md_bg_color: 'purple'
+                    size_hint_x: 1
+                    BoxLayout:
+                        orientation: 'horizontal'
+                        MDBoxLayout:
+                            size_hint_x: .60
+                            md_bg_color: app.theme_cls.primary_dark
+                            radius: [dp(14)]
+                            orientation: 'vertical'
+
+                            MDLabel:
+                                text: 'Adicionar'
+                                halign: 'center'
+
+                            MDSegmentedButton:
+                                size_hint_x: .65
+                                pos_hint: {'center_x': .5, 'center_y': .2}
+                                MDSegmentedButtonItem:
+                                    text: "Despesa"
+                                MDSegmentedButtonItem:
+                                    text: "Renda"
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                Widget: # Ganbiarra para da espaçamento, kkkk
+                                    size_hint_x: None
+                                    width: dp(8)  
+                                MDTextField:
+                                    id:newName
+                                    icon_left: "plus-box"
+                                    hint_text: "nome do registro"
+                                    size_hint_x: .40
+                                    pos_hint: {'center_x': .5, 'center_y': .2}
+                                    helper_text_mode: "on_error"
+                                    multiline: False
+                                    on_text_validate:
+                                        lucroBar.add(root.Fixo, newVal, newName) if root.Dbtype=='Lucro' else gastoBar.add(root.Fixo, newVal, newName)
+                                        pieLucro.add(root.Fixo, newVal, newName) if root.Dbtype=='Lucro' else pieGasto.add(root.Fixo, newVal, newName)
+                                        receita.add('Lucro', newVal, receita.barra,receita.textBar) if root.Dbtype=='Lucro' else receita.add('Gasto', newVal, receita.barra,receita.textBar)
+                                        lucroLine.add(root.mesAtual, newVal) if root.Dbtype=='Lucro' else gastoLine.add(root.mesAtual, newVal)
+                                        example.on_enter(self, 'Nome', {'Valor':newVal,'Data':newDate,'Tipo':newType},root.Fixo)
+                                        textoGasto.text=gastoBar.texto
+                                        textLucrot.text=lucroBar.texto
+                                        root.newValues(textGasto, gastoBar.gastoVal, gastoBar.media)
+                                        root.newValues(textLucro, lucroBar.medVal, lucroBar.media)
+                                Widget: # Ganbiarra para da espaçamento, kkkk
+                                    size_hint_x: None
+                                    width: dp(8)  
+                                MDTextField:
+                                    id:newVal
+                                    icon_left: "currency-usd"
+                                    hint_text: "valor do registro"
+                                    size_hint_x: .40
+                                    pos_hint: {'center_x': .5, 'center_y': .2}
+                                    helper_text_mode: "on_error"
+                                    multiline: False
+                                    on_text_validate: 
+                                        lucroBar.add(root.Fixo, newVal, newName) if root.Dbtype=='Lucro' else gastoBar.add(root.Fixo, newVal, newName)
+                                        pieLucro.add(root.Fixo, newVal, newName) if root.Dbtype=='Lucro' else pieGasto.add(root.Fixo, newVal, newName)
+                                        receita.add('Lucro', newVal, receita.barra,receita.textBar) if root.Dbtype=='Lucro' else receita.add('Gasto', newVal, receita.barra,receita.textBar)
+                                        lucroLine.add(root.mesAtual, newVal) if root.Dbtype=='Lucro' else gastoLine.add(root.mesAtual, newVal)
+                                        example.on_enter(self, 'Valor', {'Nome':newName,'Data':newDate,'Tipo':newType},root.Fixo)
+                                        textoGasto.text=gastoBar.texto
+                                        textLucrot.text=lucroBar.texto
+                                        root.newValues(textGasto, gastoBar.gastoVal, gastoBar.media)
+                                        root.newValues(textLucro, lucroBar.medVal, lucroBar.media)
+                                Widget: # Ganbiarra para da espaçamento, kkkk
+                                    size_hint_x: None
+                                    width: dp(8)  
+                            MDBoxLayout:
+                                orientation: 'horizontal'
+                                Widget: # Ganbiarra para da espaçamento, kkkk
+                                    size_hint_x: None
+                                    width: dp(8) 
+                                MDTextField:
+                                    id:newDate
+                                    icon_left: "calendar-range"
+                                    hint_text: "data do registro"
+                                    size_hint_x: .40
+                                    pos_hint: {'center_x': .5, 'center_y': .2}
+                                    helper_text_mode: "on_error"
+                                    multiline: False
+                                    on_text_validate: 
+                                        lucroBar.add(root.Fixo, newVal, newName) if root.Dbtype=='Lucro' else gastoBar.add(root.Fixo, newVal, newName)
+                                        pieLucro.add(root.Fixo, newVal, newName) if root.Dbtype=='Lucro' else pieGasto.add(root.Fixo, newVal, newName)
+                                        receita.add('Lucro', newVal, receita.barra,receita.textBar) if root.Dbtype=='Lucro' else receita.add('Gasto', newVal, receita.barra,receita.textBar)
+                                        lucroLine.add(root.mesAtual, newVal) if root.Dbtype=='Lucro' else gastoLine.add(root.mesAtual, newVal)
+                                        example.on_enter(self, 'Data', {'Valor':newVal,'Nome':newName,'Tipo':newType},root.Fixo)
+                                        textoGasto.text=gastoBar.texto
+                                        textLucrot.text=lucroBar.texto
+                                        root.newValues(textGasto, gastoBar.gastoVal, gastoBar.media)
+                                        root.newValues(textLucro, lucroBar.medVal, lucroBar.media) 
+                                Widget: # Ganbiarra para da espaçamento, kkkk
+                                    size_hint_x: None
+                                    width: dp(8) 
+                                MDTextField:
+                                    id:newType
+                                    icon_left: "card-multiple-outline"
+                                    hint_text: "tipo"
+                                    size_hint_x: .40
+                                    pos_hint: {'center_x': .5, 'center_y': .2}
+                                    helper_text_mode: "on_error"
+                                    multiline: False
+                                    on_text_validate: 
+                                        lucroBar.add(root.Fixo, newVal, newName) if root.Dbtype=='Lucro' else gastoBar.add(root.Fixo, newVal, newName)
+                                        pieLucro.add(root.Fixo, newVal, newName) if root.Dbtype=='Lucro' else pieGasto.add(root.Fixo, newVal, newName)
+                                        receita.add('Lucro', newVal, receita.barra,receita.textBar) if root.Dbtype=='Lucro' else receita.add('Gasto', newVal, receita.barra,receita.textBar)
+                                        lucroLine.add(root.mesAtual, newVal) if root.Dbtype=='Lucro' else gastoLine.add(root.mesAtual, newVal)
+                                        example.on_enter(self, 'Tipo', {'Valor':newVal,'Data':newDate,'Nome':newName},root.Fixo)
+                                        textoGasto.text=gastoBar.texto
+                                        textLucrot.text=lucroBar.texto
+                                        root.newValues(textGasto, gastoBar.gastoVal, gastoBar.media)
+                                        root.newValues(textLucro, lucroBar.medVal, lucroBar.media)
+
+
+                                Widget: # Ganbiarra para da espaçamento, kkkk
+                                    size_hint_x: None
+                                    width: dp(8)
+                            Widget: # Ganbiarra para da espaçamento, kkkk
+                                size_hint_x: None
+                                width: dp(8)  
+
+                            MDFillRoundFlatButton:
+                                id: 'add_button'
+                                text: 'Adicionar'
+                                pos_hint: {'center_x': .5, 'center_y': .1}
+                                padding: [50, 0, 50, 0]  
+                                
+                            Widget: # Ganbiarra para da espaçamento, kkkk
+                                size_hint_x: None
+                                width: dp(8)  
+
+                            
+                        Widget: # Ganbiarra para da espaçamento, kkkk
+                            size_hint_x: None
+                            width: dp(16)  
+                        MDBoxLayout:
+                            size_hint_x: .40
+                            md_bg_color: 'orange'
+                            orientation: 'vertical'
+                            MDBoxLayout:
+                                size_hint_y: .70
+                                md_bg_color: app.theme_cls.primary_dark
+                                radius: [dp(14)]
+                            Widget: # Ganbiarra para da espaçamento, kkkk
+                                size_hint_y: None
+                                height: dp(16)  
+                            MDBoxLayout:
+                                size_hint_y: .30
+                                md_bg_color: app.theme_cls.primary_dark
+                                radius: [dp(14)]
+
+            
+                MDBoxLayout:
+                    md_bg_color: 'yellow'
+                    size_hint_y: .1
+                    size_hint_x: 1
+                    AnchorLayout:
+                        anchor_x: 'center'
+                        anchor_y: 'center'
+                        MDBoxLayout:
+                            md_bg_color:app.theme_cls.primary_dark
+                            radius: [dp(14)]
+                            size_hint: None,None
+                            size: "310dp","30dp"
+                            pos_hint: {'center_x': .5, 'center_y': .5}
+                            ScrollView:
+                                bar_width: 0
+                                bar_color: app.theme_cls.primary_dark
+                                bar_inactive_colo: app.theme_cls.primary_dark
+                                radius: [dp(14)]
+                                size_hint: None,None
+                                size: "300dp","30dp"
+                                pos_hint:{'center_y':0.5,'center_x':0.5}
+                                width:self.width
+                                do_scroll_x: True
+                                do_scroll_y: False
+                                MDBoxLayout:
+                                    pos_hint:{'center_x':1}
+                                    radius: [dp(14)]
+                                    size_hint:None,None
+                                    width:1200
+                                    height:30
+
+                                    MDFillRoundFlatButton:
+                                        md_bg_color:app.theme_cls.primary_dark
+                                        text: "Janeiro"
+                                        size_hint_x:0.1
+                                        halign:'center'
+                                        pos_hint:{"center_x":0.5,"center_y":0.5}
+                                        on_press: root.go_login(self,1)
+                                    MDFillRoundFlatButton:
+                                        md_bg_color:app.theme_cls.primary_dark
+                                        size_hint_x:0.1
+                                        halign:'center'
+                                        text:'Fevereiro'
+                                        pos_hint:{"center_x":0.5,"center_y":0.5}
+                                        on_press: root.go_login(self,2)
+                                    MDFillRoundFlatButton:
+                                        md_bg_color:app.theme_cls.primary_dark
+                                        size_hint_x:0.1
+                                        halign:'center'
+                                        text:'Março'
+                                        pos_hint:{"center_x":0.5,"center_y":0.5}
+                                        on_press: root.go_login(self,3)
+                                    MDFillRoundFlatButton:
+                                        md_bg_color:app.theme_cls.primary_dark
+                                        size_hint_x:0.1
+                                        halign:'center'
+                                        text:'Abril'
+                                        pos_hint:{"center_x":0.5,"center_y":0.5}
+                                        on_press: root.go_login(self,4)
+                                    MDFillRoundFlatButton:
+                                        md_bg_color:app.theme_cls.primary_dark
+                                        size_hint_x:0.1
+                                        halign:'center'
+                                        text:'Maio'
+                                        pos_hint:{"center_x":0.5,"center_y":0.5}
+                                        on_press: root.go_login(self,5)
+                                    MDFillRoundFlatButton:
+                                        md_bg_color:app.theme_cls.primary_dark
+                                        size_hint_x:0.1
+                                        halign:'center'
+                                        text:'Junho'
+                                        pos_hint:{"center_x":0.5,"center_y":0.5}
+                                        on_press: root.go_login(self,6)
+                                    MDFillRoundFlatButton:
+                                        md_bg_color:app.theme_cls.primary_dark
+                                        size_hint_x:0.1
+                                        halign:'center'
+                                        text:'Julho'
+                                        pos_hint:{"center_x":0.5,"center_y":0.5}
+                                        on_press: root.go_login(self,7)
+                                    MDFillRoundFlatButton:
+                                        md_bg_color:app.theme_cls.primary_dark
+                                        size_hint_x:0.1
+                                        halign:'center'
+                                        text:'Agosto'
+                                        pos_hint:{"center_x":0.5,"center_y":0.5}
+                                        on_press: root.go_login(self,8)
+                                    MDFillRoundFlatButton:
+                                        md_bg_color:app.theme_cls.primary_dark
+                                        size_hint_x:0.1
+                                        halign:'center'
+                                        text:'Setembro'
+                                        pos_hint:{"center_x":0.5,"center_y":0.5}
+                                        on_press: root.go_login(self,9)
+                                    MDFillRoundFlatButton:
+                                        md_bg_color:app.theme_cls.primary_dark
+                                        size_hint_x:0.1
+                                        halign:'center'
+                                        text:'Outubro'
+                                        pos_hint:{"center_x":0.5,"center_y":0.5}
+                                        on_press: root.go_login(self,10)
+                                    MDFillRoundFlatButton:
+                                        md_bg_color:app.theme_cls.primary_dark
+                                        size_hint_x:0.1
+                                        halign:'center'
+                                        text:'Novembro'
+                                        pos_hint:{"center_x":0.5,"center_y":0.5}
+                                        on_press: root.go_login(self,11)
+                                    MDFillRoundFlatButton:
+                                        md_bg_color:app.theme_cls.primary_dark
+                                        text:'Dezembro'
+                                        size_hint_x:0.1
+                                        halign:'center'
+                                        pos_hint:{"center_x":0.5,"center_y":0.5}
+                                        on_press: root.go_login(self,12)
+
+
+                MDBoxLayout:
+                    id:data
+                    size_hint_x: 1
+                    md_bg_color: app.theme_cls.primary_dark
+                    radius: [dp(14)]
+                    orientation: 'vertical'
+                    MDLabel:
+                        text: "Tabela"
+                        markup: True
+                        pos_hint: {"right": 1, "top": 0.92}
+                        size_hint: 1, 0.1
+                        halign: 'center'
+                        valign: 'middle'
+
+                    GridLayout:
+                        rows: 1
+                        pos_hint: {"right": 0.99, "top": 0.85}
+                        size_hint: 0.98, 0.1
+                        canvas.before:
+                            Color:
+                                rgba: 96/255,125/255,139/255,255
+                            Rectangle:
+                                size: self.size
+                                pos: self.pos
+                        MDCheckbox:
+                            pos_hint: {"right": 0.25, "top": 0.53}
+                            size_hint: 0.05, 0.1
+                            halign:"center"
+                            bold: True
+                        MDLabel:
+                            text: "Descrição"
+                            pos_hint: {"right": 0.40, "top": 0.53}
+                            size_hint: 0.25, 0.1
+                            halign:"center"
+                            bold: True
+                        MDLabel:
+                            text: "Valor"
+                            pos_hint: {"right": 0.55, "top": 0.53}
+                            size_hint: 0.25, 0.1
+                            halign:"center"
+                            bold: True
+                        MDLabel:
+                            text: "Vencimento"
+                            pos_hint: {"right": 70, "top": 0.53}
+                            size_hint: 0.25, 0.1
+                            halign:"center"
+                            bold: True
+                        MDLabel:
+                            text: "Tipo"
+                            pos_hint: {"right": 85, "top": 0.53}
+                            size_hint: 0.25, 0.1
+                            halign:"center"
+                            bold: True
+                        MDLabel:
+                            text: "Status"
+                            pos_hint: {"right": 1, "top": 0.53}
+                            size_hint: 0.25, 0.1
+                            halign:"center"
+                            bold: True
+
+
+                    ScrollView:
+                        pos_hint: {"right": 0.99, "top": 0.80}
+                        size_hint: 0.98, 0.80
+                        GridLayout:
+                            cols: 1
+                            id: table_general
+                            size_hint_y: None
+                            spacing: 3, 3
+                            height: self.minimum_height
+                            row_default_height: "20dp"
+                            row_force_default: True
+
+
+        

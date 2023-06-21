@@ -1,0 +1,80 @@
+<Signup>:
+    MDFloatLayout:
+        radius: [0, 0, 0, 0]
+        md_bg_color: app.theme_cls.primary_dark
+        MDLabel:
+            text:'Cadastro de Novo Usuário'
+            halign:"center"
+            pos_hint: {"center_x": 0.5, "center_y":0.87}
+
+        MDTextField:
+            icon_left: "account"
+            hint_text:"Nome"
+            halign:"center"
+            size_hint: (.65, .12)
+            pos_hint: {"center_x": 0.5, "center_y":0.77}
+    
+        MDTextField:
+            id: email_text_field
+            icon_left: "email"
+            hint_text:"E-mail"
+            on_text_validate: password_text_field.focus=True
+            multiline: False
+            write_tab: False
+            halign:"center"
+            size_hint: (.65, .12)
+            pos_hint: {"center_x": 0.5, "center_y":0.67}
+
+        MDTextField:
+            id: password_text_field
+            icon_left: "key"
+            hint_text: "Senha"
+            write_tab: False
+            on_text_validate: confirm_password_text_field.focus=True
+            multiline: False
+            halign:"center"
+            size_hint: (.65, .12)
+            pos_hint: {"center_x": 0.5, "center_y":0.57}
+            password: True
+
+        MDIconButton:
+            icon: "eye-off"
+            pos_hint: {"center_x": 0.8, "center_y":0.57}
+            pos: password_text_field.width - self.width + dp(8), 0
+            on_release:
+                self.icon = "eye" if self.icon == "eye-off" else "eye-off"
+                password_text_field.password = False if password_text_field.password is True else True
+
+        MDTextField:
+            id: confirm_password_text_field
+            icon_left: "key"
+            hint_text: "Repita a Senha"
+            write_tab: False
+            multiline: False
+            halign:"center"
+            size_hint: (.65, .12)
+            pos_hint: {"center_x": 0.5, "center_y":0.47}
+            password: True
+
+        MDIconButton:
+            icon: "eye-off"
+            pos_hint: {"center_x": 0.8, "center_y":0.47}
+            pos: confirm_password_text_field.width - self.width + dp(8), 0
+            on_release:
+                self.icon = "eye" if self.icon == "eye-off" else "eye-off"
+                confirm_password_text_field.password = False if confirm_password_text_field.password is True else True
+
+        MDFillRoundFlatButton:
+            id: register_button
+            text:'    Criar conta    '
+            pos_hint:{"center_x": .5, "center_y": .37}
+            on_release: root.do_register()
+        MDTextButton:
+            text:'Voltar para Tela de Login'
+            pos_hint:{"center_x": .5, "center_y": .06}
+            on_press: root.go_login()
+
+        MDLabel:
+            font_size: 1
+            text:''
+            id: data
