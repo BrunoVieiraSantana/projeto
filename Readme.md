@@ -10,7 +10,7 @@
 relacional.
   
 <div align="center">
-<img src="docs/11.png" width="200px" />
+<img src="docs/11.png" width="400px" />
 </div>
 
 
