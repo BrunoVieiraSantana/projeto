@@ -6,7 +6,7 @@
 </span>
 
 <p align="center">
-  Aplicação de gerenciamento financeiro pessoal com integração à um banco de dados não
+  Aplicação de gerenciamento financeiro pessoal com integração à um banco de dados
 relacional.
   
 
@@ -19,28 +19,6 @@ relacional.
   - pip install https://github.com/kivymd/KivyMD/archive/master.zip<br />
 
 + Bibliotecas necessarias para criação de gráficos<br />
-  - pip install kivy-garden<br />
-  - garden install matplotlib
-  - garden install graph<br />
   - pip install matplotlib<br />
-  - python -m pip install https://github.com/kivy-garden/graph/archive/master.zip<br />
-
-___
 
 
-
-<strong>Comandos utilizados para a criação de um ambiente virtual:</strong><br />
-python -m venv venv<br />
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned<br />
-.\venv\Scripts\Activate.ps1<br />
-
-___
-
-</p>
-<strong>Teste de bibliotecas:</strong><br />
-
-import matplotlib<br />
-matplotlib.use('module://kivy.garden.matplotlib.backend_kivy')<br />
-from kivy.garden.matplotlib.backend_kivyagg import FigureCanvas, NavigationToolbar2Kivy, FigureCanvasKivyAgg<br />
-from matplotlib.figure import Figure<br />
-import matplotlib.pyplot as plt<br />
